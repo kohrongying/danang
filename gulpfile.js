@@ -4,7 +4,8 @@ const gulp = require('gulp'),
     browserSync = require('browser-sync'),
     cssnano = require('gulp-cssnano'),
     minifyHTML = require('gulp-htmlmin'),
-    del = require('del')
+    del = require('del'),
+    imagemin = require('gulp-imagemin')
 
 gulp.task('styles', function(){
     return gulp.src('src/styles.scss')
@@ -47,3 +48,9 @@ gulp.task('serve', ['clean'], function(){
 });
 
 gulp.task('default', ['serve']);
+
+gulp.task('minimages', () => 
+  gulp.src('src/img/*')
+    .pipe(imagemin([imagemin.jpegtran({progressive: true})]))
+    .pipe(gulp.dest('docs/img'))
+)

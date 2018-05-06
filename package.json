@@ -16,7 +16,9 @@
     "gulp-htmlmin": "^4.0.0",
     "gulp-sass": "^4.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-imagemin": "^4.1.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
