@@ -42,29 +42,32 @@ section.page {
 		align-items: center;
 		justify-content: center;	
 		flex-direction: column;
+
+		.page__text--group {
+			width: 60%;
+			word-wrap: break-word;
+			text-align: center;
+		}
 	}
 }
 
 .active {
 	.page__image {
-		opacity: 1!important;
+		animation: fadeIn 0.4s ease both;
 	}
 }
 
-.page[data-page="0"] {
-	.page__image {
-		background-image: url("../img/img01.jpg");
-	}
+
+@keyframes fadeIn {
+   0% {opacity:0;}
+   50% {opacity:0.5;}
+   100% {opacity:1;}
 }
 
-.page[data-page="1"] {
-	.page__image {
-		background-image: url("../img/img02.jpg");
-	}
-}
-
-.page[data-page="2"] {
-	.page__image {
-		background-image: url("../img/img03.jpg");
+@for $i from 0 through 7 {
+	.page[data-page="#{$i}"] {
+		.page__image {
+			background-image: url("../img/img#{$i}.jpg");
+		}
 	}
 }
