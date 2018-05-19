@@ -67,7 +67,7 @@ section.page {
 @for $i from 0 through 7 {
 	.page[data-page="#{$i}"] {
 		.page__image {
-			background-image: url("../img/img#{$i}.jpg");
+			background-image: url("../img/img#{$i}-small.jpg");
 		}
 	}
 }
