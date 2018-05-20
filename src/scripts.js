@@ -27,18 +27,24 @@ $(document).ready(function(){
 
 	const height = $(window).height();
 	let num_pages_travelled = 0;
+	const max_pages = $('.page').length - 1; 
 
 	$(window).scroll(function() {
 		let page_progress = Math.round(this.pageYOffset/height);
+		page_progress = Math.min(page_progress, max_pages);
+		console.log(`page prog: ${page_progress}`);
 		if (page_progress > num_pages_travelled) {
 		  	num_pages_travelled++;
 		  	let next = $(slides[num_pages_travelled].current);
 		  	next.addClass('active').removeClass('inactive');
+		  	
 		} else if (page_progress < num_pages_travelled) {
 		  	let past = $(slides[num_pages_travelled].current);
 		  	past.removeClass('active').addClass('inactive');
 		  	num_pages_travelled--;
+		  	
 		}
+		console.log(`num pages travelled: ${num_pages_travelled}`);
 	});
 
 });
