@@ -3,6 +3,7 @@ $(document).ready(function(){
 	let slides = []
 	const PAGES = $('.page');
 	PAGES.each(function(index, value){
+		this.setAttribute('data-page', index);
 		if (index==0) {
 			slides.push({
 				current: this,
@@ -29,15 +30,15 @@ $(document).ready(function(){
 
 	$(window).scroll(function() {
 		let page_progress = Math.round(this.pageYOffset/height);
-		if(page_progress > num_pages_travelled){
+		if (page_progress > num_pages_travelled) {
 		  	num_pages_travelled++;
 		  	let next = $(slides[num_pages_travelled].current);
-		  	next.addClass('active');
-		  } else if (page_progress < num_pages_travelled){
+		  	next.addClass('active').removeClass('inactive');
+		} else if (page_progress < num_pages_travelled) {
 		  	let past = $(slides[num_pages_travelled].current);
-		  	past.removeClass('active');
+		  	past.removeClass('active').addClass('inactive');
 		  	num_pages_travelled--;
-		  }
+		}
 	});
 
 });

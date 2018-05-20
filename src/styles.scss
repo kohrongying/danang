@@ -57,11 +57,22 @@ section.page {
 	}
 }
 
+.inactive {
+	.page__image {
+		animation: fadeOut 0.4s ease both;
+	}
+}
 
 @keyframes fadeIn {
    0% {opacity:0;}
    50% {opacity:0.5;}
    100% {opacity:1;}
+}
+
+@keyframes fadeOut {
+   0% {opacity:1;}
+   50% {opacity:0.5;}
+   100% {opacity:0;}	
 }
 
 @for $i from 0 through 7 {
