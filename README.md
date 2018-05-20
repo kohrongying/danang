@@ -16,4 +16,4 @@ What it looks like on Desktop/Large Screens:
 
 
 What it looks like on Mobile:
-![Screenshot of Mobile version](ss2.jpg){:style="max-width: 30%;"}
+<img src="https://raw.githubusercontent.com/kohrongying/danang/master/ss2.jpg" width=400>
