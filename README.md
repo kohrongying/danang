@@ -11,6 +11,9 @@ Todo:
 - [x] Image Compression with jpegtran and imagick 
 
 
-What it looks like:
+What it looks like on Desktop/Large Screens:
 ![Screenshot of Web version](ss1.jpg)
-![Screenshot of Mobile version](ss2.jpg)
+
+
+What it looks like on Mobile:
+![Screenshot of Mobile version](ss2.jpg){:style="max-width: 30%;"}
